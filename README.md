@@ -13,23 +13,25 @@ and saves in the working directory as wearable.zip and unzips it.
 	a. Convert the uppercase characters to lowercase
 	b. Remove the characters - ( )
 
-6. The script then reads data from  X_train.txt ,y_train.txt ,subject_train.txt  
+6. The script then reads data from  X_train.txt ,y_train.txt ,subject_train.txt  . It reads only the columns selected in step 4 from the file X_train
 
-7. The script merges y_train and activity_labels.txt into "activity" data frame
+7. The script then reads data from  X_test.txt ,y_test.txt ,subject_test.txt  . It reads only the columns selected in step 4 from the file X_test
 
-8. The script merges X_train , subject_train and activity data frames into "data_train" data frame
+8. The script combines rows from  y_train.txt and y_test.txt into "y_all" data frame
 
-9. The script then reads data from  X_test.txt ,y_test.txt ,subject_test.txt  
+9. The script combines rows from  subject_train.txt and subject_test.txt into "subject" data frame
 
-10. The script merges y_test and activity_labels.txt into "activity" data frame
+10. The script merges y_all and subject data frames into "adt" data frame
 
-11. The script merges X_test , subject_test and activity data frames into "data_test" data frame
+11. The script combines rows from  x_train.txt and x_test.txt into "x_data" data frame
 
-12. The script combines the rows from the data frames data_train and data_test into dataframe all_data
+12. The script then merges data frames "adt" and "activity_labels" into "activity" data frame
 
-13. The script removes column activityid from the dataframe  all_data
+13. The script then combines columns from x_data and activity  into data frame "all_data"
 
-14. The script then creates a second, independent tidy data set "data_ave_by_subject_activity"  with the average of each variable for each activity and each subject
+14. The script removes column activityid from the dataframe  "all_data"
 
-15. The script then writes the new tidy dataset into file tidydata.txt in to working directory
+15. The script then creates a second, independent tidy data set "data_ave_by_subject_activity"  with the average of each variable for each activity and each subject
+
+16. The script then writes the new tidy dataset into file tidydata.txt in to working directory
 
